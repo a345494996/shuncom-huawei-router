@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>shuncom</groupId>
+  <artifactId>com.shuncom.huawei.router</artifactId>
+  <version>1.0.0</version>
+  <packaging>bundle</packaging>
+
+  <name>shuncom-huawei-router</name>
+  <description>shuncom plugin for huawei HiLink</description>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+  </properties>
+
+ <dependencies>
+     <dependency>
+         <groupId>com.huawei.hilink</groupId>
+         <artifactId>com.huawei.hilink.openapi</artifactId>
+         <version>1.0.0</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.felix</groupId>
+         <artifactId>org.apache.felix.main</artifactId>
+         <version>5.4.0</version>
+     </dependency>
+     <dependency>
+         <groupId>commons-io</groupId>
+         <artifactId>commons-io</artifactId>
+         <version>2.4</version>
+     </dependency>
+     <!-- private libs -->
+     <!-- <dependency>
+       <groupId>io.netty</groupId>
+       <artifactId>netty-all</artifactId>
+       <version>4.1.9.Final</version>
+     </dependency> --> 
+<!--      <dependency>
+       <groupId>io.netty</groupId>
+       <artifactId>netty-tcnative</artifactId>
+       <version>2.0.0.Final</version>
+     </dependency> -->
+    <!--  <dependency>
+       <groupId>org.json</groupId>
+       <artifactId>json</artifactId>
+       <version>20180130</version>
+     </dependency> -->
+ </dependencies>
+ 
+ <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <optimize>true</optimize>
+                    <debug>false</debug>
+                </configuration>
+           </plugin>
+           <!-- http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html -->
+           <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.0.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                    <instructions>
+                        <bundleName>{project.name}</bundleName>
+                        <bundleDescription>{project.description}</bundleDescription>
+                        <bundleVendor>HUAWEI</bundleVendor>
+                        <Bundle-Activator>com.shuncom.hilink.Activator</Bundle-Activator>
+                        <Service-Component>OSGI-INF/Activator.xml,OSGI-INF/CommandHandler.xml,OSGI-INF/DeviceReport.xml,OSGI-INF/PluginMonitor.xml,OSGI-INF/DeviceMngr.xml</Service-Component>
+                        <!-- <Import-Package>
+                            !io.netty.internal.tcnative,!com.google.*,!com.jcraft.*,!com.ning.*,!lzma.sdk.*,!net.jpountz.*,
+                            !org.bouncycastle.*,!org.eclipse.*,!org.jboss.*,!org.apache.commons.logging.*,!org.apache.log4j.*,
+                            !org.apache.logging.log4j.*,!org.slf4j.*,,!sun.security.*,!sun.misc.*,*
+                        </Import-Package> -->
+                      
+                       <!--  <Embed-Dependency>netty-*,json</Embed-Dependency> -->
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>

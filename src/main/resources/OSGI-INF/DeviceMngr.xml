@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+    immediate="true"
+    name="com.shuncom.hilink.DeviceMngrProxy">
+    <implementation
+        class="com.shuncom.hilink.DeviceMngrProxy" />
+    <reference bind="setDeviceMngr" cardinality="1..1"
+        interface="com.huawei.hilink.openapi.device.HiLinkDeviceMngr" name="DeviceMngrProxy"
+        policy="static" unbind="unsetDeviceMngr" />
+</scr:component>

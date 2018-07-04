@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+    immediate="true"
+    name="com.shuncom.hilink.DeviceReportProxy">
+    <implementation
+        class="com.shuncom.hilink.DeviceReportProxy" />
+    <reference bind="setHiLinkDeviceReport" cardinality="1..1"
+        interface="com.huawei.hilink.openapi.device.HiLinkDeviceReport" name="DeviceReport"
+        policy="static" unbind="unsetHiLinkDeviceReport" />   
+</scr:component>

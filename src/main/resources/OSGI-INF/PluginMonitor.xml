@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+    immediate="true"
+    name="com.shuncom.hilink.PluginMonitorProxy">
+    <implementation
+        class="com.shuncom.hilink.PluginMonitorProxy" />
+    <reference bind="setPluginMonitor" cardinality="1..1"
+        interface="com.huawei.hilink.openapi.plugin.PluginMonitor" name="PluginMonitorProxy"
+        policy="static" unbind="unsetPluginMonitor" />
+</scr:component>

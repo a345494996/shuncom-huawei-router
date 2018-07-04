@@ -1,0 +1,18 @@
+<project name="DHOME_ANDRIOD_CodeCheck" default="findbugs">  
+  <property name ="findbugs.home" value ="D:\eclipse\plugins\edu.umd.cs.findbugs.plugin.eclipse_3.0.1.20150306-5afe4d1"/>  
+  <path id="findbugs.lib">  
+    <fileset dir ="${findbugs.home}/lib">  
+      <include name ="findbugs-ant.jar"/>  
+    </fileset>  
+  </path>  
+  <taskdef name="findbugs" classpathref ="findbugs.lib" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"></taskdef>  
+  <target name ="findbugs">  
+    <findbugs home ="${findbugs.home}" jvmargs="-Xmx884m" output ="html" outputFile ="D:/findbugs.html">  
+      <class location ="D:\eclipse-workspace\shuncom-huawei-router\target\classes"/>  
+      <auxClasspath path="${findbugs.home}/lib/findbugs-ant.jar"/>  
+      <auxClasspath>  
+      </auxClasspath>  
+      <sourcePath path ="D:\eclipse-workspace\shuncom-huawei-router\target\classes"/>  
+    </findbugs>  
+  </target>  
+</project> 

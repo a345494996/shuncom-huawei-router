@@ -1,0 +1,25 @@
+#包权限声明
+(org.osgi.framework.PackagePermission "*" "import")
+#获取服务权限声明
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.device.HiLinkDeviceReport" "get")
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.plugin.PluginMonitor" "get")
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.device.HiLinkDeviceMngr" "get")
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.rest.Restful" "get")
+#注册服务权限声明
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.device.AbstractHiLinkDeviceCmdHandler" "register")
+(org.osgi.framework.ServicePermission "com.huawei.hilink.openapi.plugin.PluginListener" "register")
+#Logger日志权限
+(java.util.logging.LoggingPermission "control")
+#文件访问权限
+
+#socket权限声明
+(java.net.SocketPermission "*" "connect,resolve,accept,listen")
+#设备管理权限
+(com.huawei.hilink.coreapi.perm.DevAdminByDevTypePermission "*" "get, control, observe, discover, remove, new, status, data, info")
+(com.huawei.hilink.coreapi.perm.DevAdminBySerTypePermission "*" "get, control, observe, discover, remove, new, status, data, info")
+#其他权限
+(java.util.PropertyPermission "*" "read")
+(java.lang.RuntimePermission "stopThread")
+(java.lang.RuntimePermission "getClassLoader")
+(java.lang.RuntimePermission "accessDeclaredMembers")
+(java.lang.reflect.ReflectPermission "suppressAccessChecks")
